@@ -1,0 +1,37 @@
+import type { HeadConfig } from "vitepress";
+import { VITE_BASE_URL } from "./context";
+
+export const head: HeadConfig[] = [
+    ["link", { rel: "shortcut icon", href: `${VITE_BASE_URL}logo.svg` }],
+    ["link", { rel: "icon", href: `${VITE_BASE_URL}logo.svg`, type: "image/svg+xml" }],
+    ["link", { rel: "preconnect", href: "https://fonts.googleapis.com" }],
+    ["link", { rel: "preconnect", href: "https://fonts.gstatic.com", crossorigin: "" }],
+    ["link", {
+        href: "https://fonts.googleapis.com/css2?family=Noto+Sans+SC:wght@400;700&display=swap",
+        rel: "stylesheet",
+    }],
+    ["meta", {
+        name: "viewport",
+        content: "width=device-width, initial-scale=1.0, minimum-scale=1.0, maximum-scale=1.0, user-scalable=no,shrink-to-fit=no",
+    }],
+    ["meta", {
+        name: "keywords",
+        content: "为知笔记、嵌入式开发、C语言、C++、单片机、ARM、RTOS、Linux",
+    }],
+    ["meta", { charset: "UTF-8" }],
+];
+
+export const siteConfig = {
+    rewrites: { "zh/:rest*": ":rest*" },
+    ignoreDeadLinks: [/^\/mise(?:\.html)?$/],
+    metaChunk: true,
+    lang: "zh-CN",
+    title: "嵌入式开发笔记",
+    titleTemplate: "为知笔记 · Embedded",
+    description: "为知笔记，记录 C/C++、单片机、ARM、RTOS 与嵌入式 Linux 的学习与实践",
+    head,
+    appearance: true,
+    base: VITE_BASE_URL,
+    lastUpdated: true,
+    sitemap: { hostname: `https://emb.weiweixu.cn${VITE_BASE_URL}` },
+};
