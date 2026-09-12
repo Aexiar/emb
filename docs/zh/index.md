@@ -3,8 +3,8 @@ layout: home
 home: true
 embHome: true
 lang: zh-CN
-title: 嵌入式开发笔记
-titleTemplate: 为知笔记 · Embedded
+title: 为知笔记
+titleTemplate: 嵌入式开发
 head:
   - - meta
     - name: description
